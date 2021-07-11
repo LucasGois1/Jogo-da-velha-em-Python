@@ -74,6 +74,6 @@ class Game:
 
         clear()
         if self.win:
-            print(f'VOCÊ VENCEU !!!! A palavra é {self.word}')
+            print(f'VOCE VENCEU !!!! A palavra e: {self.word}')
         else:
             print(f'Que pena, foi enforcado!! :(  A palavra era {self.word}')

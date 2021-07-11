@@ -17,6 +17,6 @@ if __name__ == '__main__':
             new_game.validate()
 
         new_game.result()
-        again = input('Deseja tentar novamente? (y/n)').lower()
+        again = input('Deseja tentar novamente? (y/n): ').lower()
 
-    print('Até breve!')
+    print('Ate breve!!!')
