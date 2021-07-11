@@ -4,8 +4,8 @@ from Game import Game
 if __name__ == '__main__':
     with open('words.txt', 'r') as doc:
         words = doc.read().split(',')
-    finish = 'n'
-    while finish is not 'y':
+    finish = 'y'
+    while finish != 'n':
         choose_word = random.choice(words)
 
         new_game = Game(choose_word)

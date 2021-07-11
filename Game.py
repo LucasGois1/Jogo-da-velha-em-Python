@@ -6,11 +6,7 @@ def clear():
 
 
 class Game:
-    new_letter: str = None
-    correct_letters = set()
-    incorrect_letters = set()
-    end: bool = False
-    win: bool = False
+
 
     man = ['|      ',
            '|      O ',
@@ -23,6 +19,11 @@ class Game:
 
     def __init__(self, word):
         self.word: str = word
+        self.new_letter: str = None
+        self.correct_letters = set()
+        self.incorrect_letters = set()
+        self.end: bool = False
+        self.win: bool = False
 
     def render(self):
         clear()
