@@ -13,7 +13,7 @@ class Game:
     win: bool = False
 
     man = ['|      ',
-           '|      O \n',
+           '|      O ',
            '|      O \n|      | ',
            '|      O \n|     /| ',
            '|      O \n|     /|\ ',
