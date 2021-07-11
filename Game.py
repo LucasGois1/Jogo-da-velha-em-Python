@@ -17,8 +17,8 @@ class Game:
            '|      O \n|      | ',
            '|      O \n|     /| ',
            '|      O \n|     /|\ ',
-           '|      O \n|     /|\ \n|      /  ',
-           '|      O \n|     /|\ \n|      /\ ',
+           '|      O \n|     /|\ \n|     /  ',
+           '|      O \n|     /|\ \n|     /\ ',
            ]
 
     def __init__(self, word):
@@ -63,6 +63,7 @@ class Game:
             self.end = True
 
     def result(self):
+        clear()
         if self.win:
             print(f'VOCÊ VENCEU !!!! A palavra é {self.word}')
         else:
