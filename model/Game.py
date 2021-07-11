@@ -1,12 +1,8 @@
 import os
-
-
-def clear():
-    return os.system('cls' if os == 'nt' else 'clear')
+from tools.clear import clear
 
 
 class Game:
-
 
     man = ['|      ',
            '|      O ',
@@ -26,6 +22,8 @@ class Game:
         self.win: bool = False
 
     def render(self):
+        """Renderiza a tela novamente com o status atual do jogo"""
+
         clear()
         print('********** Jogo da Forca ***********')
         print('+------+')
@@ -33,27 +31,35 @@ class Game:
         print(self.man[len(self.incorrect_letters)])
         print('|       ')
         print('=============\n\n')
+
         state = ''
         for letter in self.word:
             if letter in self.correct_letters:
                 state += letter
             else:
                 state += '_'
+
         print(f'Palavra: {state}\n')
         print(f"Letras erradas: {[x for x in self.incorrect_letters]}\n")
         print(f"Letras corretas: {[x for x in self.correct_letters]}\n")
 
     def set_letter(self, letter: str):
-        self.new_letter = letter
-        self.update_game()
+        """Recebe a nova letra informada e chama o metodo update para atualizar o jogo"""
 
-    def update_game(self):
+        self.new_letter = letter
+        self.update()
+
+    def update(self):
+        """Atualiza o jogo com a letra nova que o usuário inseriu"""
+
         if self.new_letter in self.word:
             self.correct_letters.add(self.new_letter)
         else:
             self.incorrect_letters.add(self.new_letter)
 
-    def validate_game(self):
+    def validate(self):
+        """Verifica se o jogo chegou ao fim"""
+
         self.win = True
         for letter in self.word:
             if letter not in self.correct_letters:
@@ -64,6 +70,8 @@ class Game:
             self.end = True
 
     def result(self):
+        """Mostra o resultado do jogo para o usuário"""
+
         clear()
         if self.win:
             print(f'VOCÊ VENCEU !!!! A palavra é {self.word}')
